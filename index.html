@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PDF Merger & Compressor</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PDF Merger & Compressor</h1>
+      <p class="subtitle">100% client-side. Your files never leave your browser.</p>
+    </header>
+
+    <div id="dropzone" class="dropzone">
+      <p>Drag & drop PDFs here, or click to select</p>
+      <input type="file" id="fileInput" accept="application/pdf" multiple hidden />
+    </div>
+
+    <div class="toolbar">
+      <label>Quality:
+        <select id="quality">
+          <option value="low">Low (smallest)</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High (best)</option>
+        </select>
+      </label>
+      <button id="mergeBtn">Merge All</button>
+      <button id="splitBtn">Split Selected</button>
+      <button id="clearBtn">Clear</button>
+      <a id="paywall" class="paywall" href="https://gumroad.com/l/placeholder" target="_blank">Unlock full version — $29</a>
+    </div>
+
+    <div id="progressWrap" class="progress-wrap" hidden>
+      <div id="progressBar" class="progress-bar"></div>
+      <span id="progressText"></span>
+    </div>
+
+    <div id="info" class="info"></div>
+
+    <div id="pages" class="pages"></div>
+
+    <div id="toast" class="toast" hidden></div>
+  </div>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

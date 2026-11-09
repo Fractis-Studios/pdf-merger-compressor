@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:#0f1115; color:#e6e6e6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+header h1 { margin:0; }
+.subtitle { color:#9aa; margin:4px 0 20px; }
+.dropzone { border:2px dashed #444; border-radius:12px; padding:40px; text-align:center; cursor:pointer; background:#161922; }
+.dropzone:hover { border-color:#6af; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:16px 0; }
+.toolbar button { padding:8px 14px; border:none; border-radius:8px; background:#2a6; color:#fff; cursor:pointer; }
+.toolbar button:hover { filter:brightness(1.1); }
+.paywall { margin-left:auto; color:#ffd166; text-decoration:none; }
+.pages { display:grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:12px; }
+.page { background:#161922; border-radius:10px; padding:8px; text-align:center; position:relative; }
+.page img { width:100%; border-radius:6px; }
+.page .del { position:absolute; top:6px; right:6px; background:#c33; color:#fff; border:none; border-radius:50%; width:24px; height:24px; cursor:pointer; }
+.page.selected { outline:2px solid #6af; }
+.progress-wrap { margin:12px 0; }
+.progress-bar { height:8px; background:#2a6; width:0%; border-radius:4px; transition:width .2s; }
+.info { margin:8px 0; color:#9aa; }
+.toast { position:fixed; bottom:20px; right:20px; background:#222; padding:12px 18px; border-radius:8px; box-shadow:0 4px 12px #000; }
