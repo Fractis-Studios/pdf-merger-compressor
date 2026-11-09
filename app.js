@@ -23,7 +23,8 @@ dropzone.addEventListener('drop',e=>{e.preventDefault();dropzone.style.borderCol
 fileInput.addEventListener('change',e=>handleFiles(e.target.files));
 
 async function handleFiles(files){
-  const arr = Array.from(files).filter(f=>f.type==='application/pdf');
+  const arr = Array.from(files).filter(f=>f.name.toLowerCase().endsWith('.pdf'));
+  try {
   for(const f of arr){
     totalSize += f.size;
     const buf = await f.arrayBuffer();
@@ -41,6 +42,7 @@ async function handleFiles(files){
   }
   renderPages();
   info.textContent = `Pages: ${pages.length} | Original size: ${(totalSize/1024/1024).toFixed(2)} MB`;
+  } catch(e){ showToast('Error: '+e.message); console.error(e); }
 }
 
 function renderPages(){
