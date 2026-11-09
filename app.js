@@ -27,7 +27,8 @@ async function handleFiles(files){
   for(const f of arr){
     totalSize += f.size;
     const buf = await f.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({data:buf}).promise;
+    const data = new Uint8Array(buf);
+    const pdf = await pdfjsLib.getDocument({data}).promise;
     const srcPdf = await PDFDocument.load(buf);
     for(let i=0;i<pdf.numPages;i++){
       const page = await pdf.getPage(i+1);
